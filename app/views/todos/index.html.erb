@@ -1,7 +1,7 @@
-<h1>Listing all Persons</h1>
+<h1>Listing all Character</h1>
 
 <p>
-    <%= link_to "Create a Person", new_todo_path %>
+    <%= link_to "Create a Character", new_todo_path %>
 </p>
 
 
@@ -14,9 +14,9 @@
         <tr>
             <td><%= todo.name %></td>
             <td><%= todo.description %></td>
-            <td><%= link_to "Edit Person", edit_todo_path(todo) %></td>
-            <td><%= link_to "Show Person", todo_path(todo) %></td>
-            <td><%= link_to "Delete Person", todo_path(todo), method: :delete, data: { confirm: 'Are you sure?' }%></td>
+            <td><%= link_to "Edit Character", edit_todo_path(todo) %></td>
+            <td><%= link_to "Show Character", todo_path(todo) %></td>
+            <td><%= link_to "Delete Character", todo_path(todo), method: :delete, data: { confirm: 'Are you sure?' }%></td>
         </tr>
     <% end %>
 

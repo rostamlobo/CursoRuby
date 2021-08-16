@@ -1,29 +1,3 @@
-<h1>Editando seu personagem!</h1>
+<h1>Editing Your Character!</h1>
 
-<% if @todo.errors.any? %>
-    <h2>Não foi possível salvar o usuário pelos erros: </h2>
-    <ol>
-        <% @todo.errors.full_messages.each do |msg|  %>
-            <li><%= msg %></li>
-        <% end %>
-    </ol>
-
-<% end %>
-<%= form_for @todo do |f| %>
-    <p>
-        <%= f.label :name %><br>
-        <%= f.text_field :name%>
-    </p>
-
-    <p>
-        <%= f.label :description %><br>
-        <%= f.text_area :description%>
-    </p>
-
-    <p>
-        <%= f.submit %>
-    </p>
-
-<% end %>
-
-<%= link_to "Back", todos_path %>
+<%= render 'form' %>
