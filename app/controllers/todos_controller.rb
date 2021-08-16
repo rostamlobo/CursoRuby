@@ -7,7 +7,7 @@ class TodosController < ApplicationController
     def create
         @todo = Todo.new(todo_params)
         if @todo.save
-            flash[:notice] = "Personagem salvo!"
+            flash[:notice] = "Person Saved!"
             redirect_to todo_path(@todo)
         else 
             render 'new'
@@ -25,7 +25,7 @@ class TodosController < ApplicationController
     def update 
         @todo = Todo.find(params[:id])
         if @todo.update(todo_params)
-            flash[:notice] = "Personagem atualizado!"
+            flash[:notice] = "Person Updated Sucessfully!"
             redirect_to todo_path(@todo)
         else
             render 'edit'    
@@ -35,6 +35,13 @@ class TodosController < ApplicationController
 
     def index 
         @todos = Todo.all
+    end
+
+    def destroy
+        @todo = Todo.find(params[:id])
+        @todo.destroy
+        flash[:notice]= "Person Deleted Sucessfully!"
+        redirect_to todos_path
     end
     private
 
