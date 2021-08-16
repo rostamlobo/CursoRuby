@@ -1,6 +1,6 @@
 class TodosController < ApplicationController
     before_action :set_todo, only: [:edit,:update,:show,:destroy]
-
+    http_basic_authenticate_with name: "teste", password: "1234"
 
     def new
         @todo = Todo.new
